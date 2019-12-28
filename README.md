@@ -1,2 +1,2 @@
 # xdm-hack
-xdm theme.
+A xdm theme that just works :)
