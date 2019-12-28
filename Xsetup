@@ -1,0 +1,21 @@
+#!/bin/sh
+
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ $(xrandr --listactivemonitors | grep -wo eDP-1$) = "DP-1" ]; then
+    setxkbmap -model pc104 -layout us,us -variant ,dvorak -option grp:shift_caps_toggle
+else
+    setxkbmap -model pc104 -layout us,us -variant dvorak, -option grp:shift_caps_toggle
+fi
+
+## the root window should have this color
+xsetroot -solid "#1d1f21" -cursor_name left_ptr
+
+## these are all optional
+/etc/X11/xdm/hack/buttons -geometry -0-0 &
+xclock -geometry +0-0 &
+# xconsole -daemon -geometry 640x200-0+0

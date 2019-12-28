@@ -1,0 +1,52 @@
+xlogin*translations:#override \
+	Ctrl<Key>R:abort-display()\n\
+	<Key>F1:set-session-argument(failsafe) finish-field()\n\
+	<Key>Return:set-session-argument() finish-field()\n\
+	Ctrl<Key>Return:set-session-argument(failsafe) finish-field()\n\
+
+xlogin*greeting:CLIENTHOST\040
+xlogin*namePrompt:username:\040
+xlogin*passwdPrompt:password:\040
+xlogin*fail:incorrect\040credentials
+xlogin*greetFace: xft:Hack-18:style=Regular
+xlogin*failFace: xft:Hack-18:style=Regular
+xlogin*shdColor:#1d1f21
+xlogin*hiColor:#1d1f21
+xlogin*inpColor:#1d1f21
+xlogin*greetColor:#8abeb7
+xlogin*promptColor:#8abeb7
+xlogin*failColor:#a54242
+!xlogin*logoFileName:/etc/X11/xdm/hack/hack.xpm
+xlogin*echoPasswd: true
+xlogin*echoPasswdChar: *
+
+*borderWidth: 0
+*foreground: #8abeb7
+*background: #1d1f21
+
+XClock*analog:false
+XClock*strftime:(%A)\040%F\040%T
+XClock*update:1
+XClock*render:false
+XClock*font: -*-hack-bold-r-normal--*-18-*-*-m-*---
+XClock.width:640
+
+Xmessage*message.scrollVertical:whenNeeded
+Xmessage*message.scrollHorizontal:Never
+Xmessage*Command.highlightThickness:2
+Xmessage*Command.internalWidth:8
+Xmessage*Command.internalHeight:8
+Xmessage*Command.shapeStyle:rectangle
+Xmessage*Command.font: xft:Hack-18:style=Regular
+Xmessage*font: xft:Hack-18:style=Regular
+
+XConsole*verbose:true
+XConsole*exitOnFail:true
+
+Chooser*geometry:700x500
+Chooser*allowShellResize:false
+Chooser*viewport.forceBars:true
+Chooser*label.font: xft:Hack-18:style=Regular
+Chooser*label.label:XDMCP\040Host\040Menu\040from\040CLIENTHOST
+Chooser*list.font: xft:Hack-18:style=Regular
+Chooser*Command.font: xft:Hack-18:style=Regular
