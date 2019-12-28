@@ -1,17 +1,24 @@
-all: install clean
+BINARY:=xdm-hack
+
+all: uninstall install clean
 
 .PHONY: clean
 clean:
 	@echo "Cleaning build files..."
-	@rm -rf *.pkg.tar.xz
+	@rm -f *.pkg.tar.xz
 	@rm -rf pkg src
 	@echo "Done."
 
 .PHONY: build
 build:
 	@updpkgsums ./PKGBUILD
-	@makepkg -fp ./PKGBUILD
+	@makepkg -fpL ./PKGBUILD --noconfirm
 
 .PHONY: install
 install:
-	@makepkg -ip ./PKGBUILD
+	@updpkgsums ./PKGBUILD
+	@makepkg -Ccip ./PKGBUILD --noconfirm
+
+.PHONY: uninstall
+uninstall:
+	@sudo pacman -R $(BINARY) --noconfirm 
